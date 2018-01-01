@@ -75,7 +75,8 @@ if (directoryExists("platforms/android")) {
         // replace the default value
         strings = strings.replace(new RegExp('<string name="google_api_key">([^<]+?)</string>', "i"), '<string name="google_api_key">' + json.client[0].api_key[0].current_key + '</string>')
 
-        fs.writeFileSync("platforms/android/res/values/strings.xml", strings);
+	fs.writeFileSync("platforms/android/app/src/main/res/values/strings.xml", strings);
+	      
       } catch(err) {
         process.stdout.write(err);
       }
